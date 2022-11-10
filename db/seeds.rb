@@ -12,12 +12,18 @@ Movie.destroy_all
 # List.destroy_all
 
 # the Le Wagon copy of the API
-url = 'http://tmdb.lewagon.com/movie/top_rated'
+# url = 'http://tmdb.lewagon.com/movie/top_rated'
+  url = 'https://api.themoviedb.org/3/movie/upcoming?region=jp&api_key=816daa8e56b127200f2275897b7ebae4'
 response = JSON.parse(URI.open(url).read)
 
 response['results'].each do |movie_hash|
   movie_title = movie_hash['title']
-  movie_overview = movie_hash['overview']
+  if movie_hash['overview'].empty?
+    movie_overview = "No overview provided... :("
+  else
+    movie_overview = movie_hash['overview']
+  end
+
   movie_poster = "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path']
   movie_rating = movie_hash['vote_average']
 

@@ -1,0 +1,10 @@
+<div class="d-flex justify-content-between">
+  <h1>Lists of movies</h1>
+  <%= link_to new_list_path(@list) do %>
+    <button class="btn btn-success">Create List</button>
+  <% end %>
+</div>
+<% @lists.each do |list| %>
+ <p><%= link_to list.name, list_path(list) %>
+ <% list.bookmark_ids.first %></p>
+<% end %>
