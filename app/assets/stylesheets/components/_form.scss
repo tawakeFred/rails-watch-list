@@ -11,6 +11,7 @@ legend ~ div.form-check:first-of-type {
 
 .form-control {
   background-color: $white;
+  color:  $gray;
 }
 
 .movie-input {
@@ -70,7 +71,7 @@ legend ~ div.form-check:first-of-type {
   text-align: center;
 }
 .tick {
-  background-color: #success;
+  background-color: $success;
   color: white;
   font-size: 16px;
   padding: 6px 12px;

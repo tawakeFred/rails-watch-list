@@ -1,12 +1,12 @@
 <div class="d-flex justify-content-between">
   <h1><%= @list.name %></h1>
   <%= link_to new_list_bookmark_path(@list) do %>
-  <button class="btn btn-success">Add movie</button>
+  <button class="btn btn-primary">Add movie</button>
   <% end %>
 </div>
 <div class="cards">
 <% @list.bookmarks.each do |bookmark|  %>
-  <div class="card">
+  <div class="card lazy">
   <%= image_tag bookmark.movie.poster_url %>
   <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
     <button class="btn btn-danger delete-button"><i class="fa-solid fa-fire"></i></button>

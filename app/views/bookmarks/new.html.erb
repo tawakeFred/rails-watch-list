@@ -7,7 +7,7 @@
   <% @movies.each do |movie| %>
 
         <input type="radio" name="bookmark[movie_id]" id="bookmark_movie_id_<%= movie.id %>" class="d-none imgbgchk" value="<%= movie.id %>">
-            <label class="card" for="bookmark_movie_id_<%= movie.id %>">
+            <label class="card lazy" for="bookmark_movie_id_<%= movie.id %>">
               <img src="<%= movie.poster_url %>" alt="<%= movie.title %>">
               <div class="tick_container">
                 <div class="tick"><i class="fa fa-check"></i></div>
