@@ -6,5 +6,8 @@
 </div>
 <% @lists.each do |list| %>
  <p><%= link_to list.name, list_path(list) %>
- <% list.bookmark_ids.first %></p>
+ <% list.bookmarks.each do |bookmark| %>
+  <% image_tag bookmark.movie.poster_url %>
+  <% end %>
+ </p>
 <% end %>
