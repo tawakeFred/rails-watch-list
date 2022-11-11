@@ -2,7 +2,19 @@
 
 <%= simple_form_for [ @list, @bookmark ] do |f| %>
 
-  <%= f.association :movie, as: :radio_buttons %>
+
+    <div class="cards">
+  <% @movies.each do |movie| %>
+
+        <input type="radio" name="bookmark[movie_id]" id="bookmark_movie_id_<%= movie.id %>" class="d-none imgbgchk" value="<%= movie.id %>">
+            <label class="card" for="bookmark_movie_id_<%= movie.id %>">
+              <img src="<%= movie.poster_url %>" alt="<%= movie.title %>">
+              <div class="tick_container">
+                <div class="tick"><i class="fa fa-check"></i></div>
+              </div>
+            </label>
+  <% end %>
+</div>
   <%= f.input :comment %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

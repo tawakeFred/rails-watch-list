@@ -1,12 +1,13 @@
 <div class="d-flex justify-content-between">
-  <h1>Lists of movies</h1>
+  <h1>Personal Lists</h1>
   <%= link_to new_list_path(@list) do %>
-    <button class="btn btn-success">Create List</button>
+    <button class="btn btn-primary">Create List</button>
   <% end %>
 </div>
+<div class="cards">
 <% @lists.each do |list| %>
- <p>
-  <%= link_to list.name, list_path(list) %>
-  <%= list.image.attached? ? cl_image_tag(list.image.key) : image_tag('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU') %>
- </p>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.image.attached? ? cl_image_path(list.image.key) : image_url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU') %>)">
+    <%= link_to list.name, list_path(list) %>
+  </div>
 <% end %>
+</div>
