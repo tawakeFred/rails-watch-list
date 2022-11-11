@@ -251,7 +251,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
-  cloudinary (~> 1.16.0)
+  cloudinary
   debug
   dotenv-rails
   font-awesome-sass (~> 6.1)
