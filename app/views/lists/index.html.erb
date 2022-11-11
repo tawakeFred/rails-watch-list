@@ -7,6 +7,6 @@
 <% @lists.each do |list| %>
  <p>
   <%= link_to list.name, list_path(list) %>
-  <%= list.image.attached? ? cl_image_tat(list.image.key) : image_tag('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU') %>
+  <%= list.image.attached? ? cl_image_tag(list.image.key) : image_tag('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU') %>
  </p>
 <% end %>
